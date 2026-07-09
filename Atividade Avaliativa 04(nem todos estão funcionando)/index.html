@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Atividade Avaliativa 04 </title>
+    
+    <style>
+      details{
+        margin-bottom: 10px;
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 5px;
+        background: #f0f0f0;
+      }
+      summary{
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1> Atividade Avaliativa 04 </h1>
+    
+    <!-- Exercício 01 -->
+    <details>
+      <summary> Exercício 1: Par ou Ímpar: </summary>
+      <p> Digite um número: </p>
+        <input type="number" id="in01" />
+        <button onclick="Verificar()"> Verificar </button>
+        <p id="out01"></p>
+        
+      <script>
+        function Verificar(){
+         let n01 = parseInt(document.getElementById('in01').value);
+         let res01; 
+         
+         if(isNaN(n01)){
+           res01 = 'Informe um número válido!';
+         }else{
+           if(n01 == 0){
+            res01 = 'O número é zero!'; 
+           }else{
+             if(n01 % 2 == 0){
+               res01 = 'O número: ' + n01 + ' é par';
+             }else{
+               res01 = 'O número: ' + n01 + ' é ímpar';
+             }
+             
+             if(n01 > 0){
+               res01 = res01 + ' e positivo';
+             }else{
+               res01 = res01 + ' e negativo';
+             }
+           }
+         }
+         document.getElementById('out01').innerHTML = res01;
+        }
+      </script>
+    </details>
+    
+    <!-- Exercício 02 -->
+    <details>
+      <summary> Exercício 2: A divisão </summary>
+      <p> Informe o dividendo: </p>
+      <input type="number" id="in02" />
+      <p> Informe o divisor: </p>
+      <input type="number" id="in03" />
+      <button onclick="Calcular()"> Calcular </button>
+      <p id="out02"></p>
+        
+      <script>
+        function Calcular(){
+          let n02 = parseInt(document.getElementById('in02').value);
+          let n03 = parseInt(document.getElementById('in03').value);
+          let res02 = '';
+          
+          if(isNaN(n02) || isNaN(n03)){
+            res02 = 'Informe dois números válidos!';
+          }else{
+            if(n03 == 0){
+              res02 = 'Erro! Não existe divisão por zero!';
+            }else{
+              res02 = 'Quociente: ' + (n02 / n03).toFixed(2);
+            }
+          }
+          document.getElementById('out02').textContent = res02;
+        }
+      </script>
+    </details>
+    
+    <!-- Exercício 03 -->
+    <details>
+      <summary> Exercício 3: A Lista</summary>
+      <p>Digite o primeiro valor :</p>
+      <input type="number" id="in03x" />
+      <p>Digite o segundo valor:</p>
+      <input type="number" id="in03y" />
+      <button onclick="Contador()" >Contar</button>
+      <p id="out03"></p>
+
+  <script>
+    function Contador() {
+      let x = parseInt(document.getElementById('in03x').value);
+      let y = parseInt(document.getElementById('in03y').value);
+      let res03 = '';
+
+      if (isNaN(x) || isNaN(y)) {
+        res03 = 'Informe valores válidos para X e Y!';
+      } else {
+        let inicio, fim;
+        
+        if (x < y) {
+          inicio = x;
+          fim = y;
+        } else {
+          inicio = y;
+          fim = x;
+        }
+        
+        res03 = 'Números entre ' + inicio + ' e ' + fim + ':<br>';
+
+        for (let i = inicio; i <= fim; i++) {
+          res03 += i + ' ';
+        }
+      }
+
+      document.getElementById('out03').innerHTML = res03;
+    }
+      </script>
+    </details>
+    
+    <!-- Exercício 04 -->
+    <details>
+      <summary> Exercício 4: Fatorial </summary>
+      <p> Digite um número: </p>
+        <input type="number" id="in06" />
+        <button onclick="Fatorial()"> Calcular o fatorial </button>
+        <p id="out04"></p>
+        
+      <script>
+        function Fatorial(){
+          let n06 = parseInt(document.getElementById('in06').value);
+          let res04 = '';
+          let fatorial = 1;
+          
+          if(isNaN(n06)){
+            res04 = 'Informe um número válido!';
+          }else{
+            if(n06 <= 1){
+              res04 = 'O cálculo fatorial só é válido para números maiores que 1';
+            }else{
+              for(let i = n06; i > 1; i--){
+                fatorial = fatorial *  i;
+              }
+              res04 = n06 + '! = ' + fatorial;
+            }
+          }
+          
+          document.getElementById('out04').textContent = res04;
+        }                                                                                                                                        
+        
+      </script>
+    </details>
+    
+    <!-- Exercício 05 -->
+    <details>
+      <summary> Exercício 5: Bônus </summary>
+      <p> Informe o número que deseja verificar: </p>
+      <input type="number" id="in07" />
+      <button onclick="Bonus()"> verificar </button>
+      <p id="out05"></p>
+      
+      <script>
+        function Bonus(){
+          let n07 = parseInt(document.getElementById('in07').value);
+          res05 = '';
+          
+          if(isNaN(n07)){
+            res05 = 'Informe um número válido!';
+          }else{
+            if(n07 >= -9 && n07 <= 9){
+              res05 = '1 casa decimal';
+            }else{
+              if(n07 >= -99 && n07 <= 99){
+                res05 = '2 casas decimais';
+              }else{
+                if(n07 >= -999 && n07 <= 999){
+                  res05 = '3 casas decimais'; 
+              }else{
+                if(n07 >= -9999 && n07 <= 9999){
+                  res05 = '4 casas decimais'; 
+              }else{
+                if(n07 >= -99999 && n07 <= 99999){
+                  res05 = '5 casas decimais';
+              }else{
+                if(n07 >= -999999 && n07 <= 999999){
+                  res05 = '6 casas decimais';
+              }else{
+                if(n07 >= -9999999 && n07 <= 9999999){
+                  res05 = '7 casas decimais';
+              }else{
+                if(n07 >= -99999999 && n07 <= 99999999){
+                  res05 = '8 casas decimais';
+              }else{
+                if(n07 >= -999999999 && n07 <= 999999999){
+                  res05 = '9 casas decimais';
+              }else{
+                if(n07 >= -9999999999 && n07 <= 9999999999){
+                  res05 = '10 casas decimais';
+              }else{
+                if(n07 >= -99999999999 && n07 <= 99999999999){
+                  res05 = '11 casas decimais';
+              }
+            }
+          }
+          document.getElementById('out05').textContent = res05;
+        }
+        
+      </script>
+    </details>
+    
+    <details>
+      <summary> Exercício 5: Bônus_2 </summary>
+      <p> Informe o número que deseja verificar: </p>
+      <input type="number" id="in08" />
+      <button onclick="Bonus_2()"> Verificar </button>
+      <p id="out6"></p>
+      
+      <script>
+        function Bonus_2(){
+          let n08 = parseInt(document.getElementById('in08').value);
+          let res06 = '';
+          let casas = 0;
+          
+          if(isNaN(n08)){
+            res06 = 'Informe um número válido!';
+          }else{
+            if(n08 >= 0){
+              n08 = n08 + ''; // Converte o número para texto
+              casas = n08.length;
+            }else{
+              n08 = n08 +''; // Converte o número para texto
+              casas = n08.length - 1;
+            }
+            if(casas > 11){
+              res06 = 'Valor fora do intervalo!';
+            }else{
+              res06 = casas + ' casas decimais';
+            }
+          }
+          
+          document.getElementById('out06').textContent = res06;
+        }
+        
+      </script>
+    </details>
+    
+  </body>
+</html>
+
+
+
