@@ -1,0 +1,354 @@
+body{
+  font-family: Arial; Sans-Serif; /* Fontes que sera ultilizadas*/
+  margin: 0px;
+  background-color: #F4F4F4;
+}
+
+.top-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0,1);
+  flex-wrap: wrap; /* Quando não hover espaço, passa os elementos */
+  gap: 10px;
+}
+
+.logo img{
+  height: 40px;
+}
+
+.search-container{
+  flex-grow: 1; /* Ajusta a largura do conteiner */
+  margin: 0px 20px;
+  max-width: 250px; /*Tamanho máximo do conteainer */
+  position: relative;
+}
+
+.search-bar{
+  width: 80%;
+  padding: 8px 40px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none; /* Retira a linha de contorno quando selecionado */
+}
+
+.search-button{
+  position: absolute; /* POsição absoluta em relação ao search-container*/
+  right: 5px;
+  top: 50%;/* Cetraliza verticalmente o botão*/
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.search-butto svg{
+  fill: #555;
+}
+
+.login-button{
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-button:hover{
+  background-color: #0056b3;
+}
+
+.title{
+  text-align: center;
+}
+
+.main-container{
+  display: flex;
+  justify-content: center;
+  gap: 30px; /*Adiciona um espaço vazio entre os elementosdo container */
+  max-width: 1200px; /*Delimita a largura máxima do containe principal */
+  margin: 0px auto; /* Específica que as margens Top/button = 0 e Left/Right = auto */
+  text-align: left; /* Alinha o texo a esquerda */
+}
+
+.sidebar-menu{
+  flex-basis: 250px; /* Define o tamanho inicial do meu lateral */
+  flex-shrink: 0; /* Não permite que o container iminua de tamanho */
+  position: sticky; /* Permite que o menu laterar esteja empre visivel */
+  top: 20px;
+  align-self: flex-start; /* Posiciona no topo da coluna main-container */
+  height: fit-content; /* Ajusta a altura conforme o conteúdo sem passar o tamanho da tela */
+  background-color: #ffffff; /* Cor do fundo do menu */
+  padding: 15px; /* Margem interna */
+  border-radius: 8px; /* Arredonda os cantos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Projeta ua sombra */
+}
+
+.sidebar-menu h3{
+  margin-top: 0; /* Retira a margem superior */
+}
+
+.sidebar-menu ul{
+  list-style: none; /* Remove as configurações pré-definidas pelo navegador */
+}
+
+.effects-column{
+  flex-grow: 1; /* Permite ocupar todo epaço até a margem direta */
+  display: flex; /* Habilita o Flexbox para alinhar os elementos */
+  flex-direction: column; /* Organiza os elementos em uma coluna */
+  gap: 30px; /* Adiciona um espaçamento de 30px entre os elementos */
+  max-width: 300px; /* Largura máxima de 700 */
+}
+
+.effect-card{
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 08px rgba(0, 0, 0; 0.1);
+  padding: 20px;
+  box-sizing: border-box; /* Determina o tamanho do elemento contanto com o padding */
+}
+
+.effect-card:hover{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.effect-box{
+  width: 100%;
+  height: 150px;
+  background-color: #eee;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/*  1 - sombra 3D Flutuante */
+.effect-shadow{
+  box-shadow: 10px 10px 0px 0px #0056B3;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.effect-shadow:hover{
+  box-shadow: 15px 15px 0px 0px #0056B3;
+}
+
+/* 2 - Rotação no Hover */
+.effect-rotate{
+  transition: transform 1.5s ease-in-out;
+}
+
+.effect-rotate:hover{
+  transform: rotate(360deg);
+}
+/* 3 - Gradiente Animado */
+@keyframes gradient-animation{ /* Define as etapa da animação */
+  0% {background-position: 0% 50%;}  /*  left center Primeiro estagio da animação*/
+  50% {background-position:100% 50%;} /*  right center Segundo estagio da animação*/
+  100% {background-position: 0% 50%;} /*  left center Finalização estagio da animação*/
+}
+ 
+.effect-gradient{
+  background: linear-gradient(45deg, #1E90FF, #836FFF, #FFFFFF); /*Cria um gradiente linear */
+  background-size: 200% 200%;
+  animation: gradient-animation 8s ease infinite;
+}
+
+/*4 - Transição Animada */
+@keyframes color-change{
+  0% {background-color: ; #1E90FF }
+  50% {background-color: #836FFF;}
+  100% {background-color: #FFFFFF;}
+}
+
+.effect-transition{
+  animation: color-change 4s ease infinite;
+}
+
+/* Efeito cor */
+@keyframes color{
+  0%{color: red;}
+  50%{color: yellow;}
+  100%{color: blue;}
+}
+
+.effect-color{
+  animation: float 2s infinite alternat;
+  font-size: 50px;
+  color: red;
+}
+
+@keyframes color{ /* Define as etapa da animação */
+  0% {background-position: 50% 0%;}  /*  left center Primeiro estagio da animação*/
+  50% {background-position:50% 100%;} /*  right center Segundo estagio da animação*/
+  100% {background-position: 50% 0%;} /*  left center Finalização estagio da animação*/
+ 
+}
+
+/*Efeito 05 - Cartão holográfico */
+.holographic-card{/*Efeito adicional ao card */
+ background: #000000; /*cor de fundo preta */
+ color: #ffffff; /*cor das letras brancas */
+}
+.holographic-box{/*EStilo da box onde o efeito aparece  */
+  background: #222222;/*cor de fundo */
+  display: flex; /*Permite alinhar os componentes "filhos" */
+  justify-content: center; /*Coloca os elementos no centro horizontal do container*/
+  align-items: center;/*Coloca os elementos no centro vertical do container. */
+  position: relative; /* Define o ponto  de referência dos elementos "filhos" */
+  overflow: hidden; /*esconde todo o conteúdo que ultrapassa as bordas do elemento */
+  border-radius: 15px; /*Arredonda os cantos */
+  transition: all 0.5s ease;/*Toda alteração nas propriedades do elemento acontecerá de forma suave e animada */
+}
+.holographic-box h2{ /* Formatação de estilo do título h2 */
+  color: #00ffff; /*Cor da fonte azul piscina*/
+  font-size: 32px;
+  position: relative;/* Define o ponto  de referência dos elementos "filhos" */
+  z-index: 2; /* Garante que o texto fique na frente dos efeitos */
+}
+.holographic-box::before{
+  content: "";/*Cria a camada virtual. É obrigatório para que o ::before funciona */
+  position: absolute; /* Posicionaem relação ao elemento pai */
+  top: -50%;/*Move o elemento para cima em 50% da altura do conteiner da referência */
+  left: -50%;/* Move o elemento para a esquerda em 50% da largura do conteiner de referência*/
+  width: 200%;/*Duplica o tamanho da largura do background com base no elemento pai*/
+  height: 200%;/*Duplica o tamanho da altura do background com base no elemento pai*/
+  background: linear-gradient(0deg, transparent, transparent 30%, rgba(0,255,255,0.3));
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;/*Toda alteração nas propriedades do elemento acontecerá de forma suave e animada */
+  opacity: 0;/* Deixa totalmente transparente*/
+}
+.holographic-box:hover{/*Executa ações quando o ponteiro do mouse é posicionado sobre*/
+  transform: scale(1.05);/*Aumenta em 5% as dimensões do elemento */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+.holographic-box:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+/* Efeito 06 - Transformação */
+.liquid-morph-card{
+  background: #A3D8FF;
+}
+.liquid-morph-box{
+  height: 100px; /* Define a altura do elemento em 100px */
+  background: #0A2342; /* Define a cor do plano de fundo */
+  display: flex; /*Permite alinhar os componentes "filhos" */
+  justify-content: center; /*Coloca os elementos no centro horizontal do container. */
+  align-items: center; /*Coloca os elementos no centro vertical do container. */
+  position: relative; /*Coloca os elementos no centro vertical do container. */
+  border-radius: 150px; /* Define que os cantos serão arredondados */
+  overflow: hidden; /* Esconde todo o conteúdo que ultrapasse as bordas do elemento */ 
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265,1.55); /* Transição suave que tem um efeito elástico */
+}
+.liquid-morph-box h2{
+  color: #00FFFF; /* Define a cor do texto */
+  font-size: 24px; /* Define o tamanho da fonte */
+  position: relative; /* Define o ponto de referência dos elementos "filhos" */
+  z-index: 2; /* Garante que o texto fique na frente dos efeitos */
+}
+.liquid-morph-box::before{
+  content: ""; /* Cria a camada virtual. É obrigatório para que o ::before funcione */
+  position: absolute; /* Posiciona em relação ao elemento "pai" */
+  top: 0; left: 0; /* Posiciona no canto superior esquerdo */
+  width: 100%; height: 100%; /* Define com as mesmas dimenções que o container "pai" */ 
+  background: conic-gradient(#00FFFF 0deg, #0A2342 120deg, #00FFFF 240deg); /* Gradiente cônico */
+  transition: all 0.8s ease; 
+  border-radius: 50px; 
+  opacity: 0; /* Fica oculto */
+  transform: scale(0); /* Reduz a um único ponto */
+}
+.liquid-morph-box:hover{
+  border-radius: 10px;
+  transform: rotate(10deg);
+}
+.liquid-morph-box:hover::before{
+  opacity: 0.3;
+  transform: scale(2);
+}
+
+/* Efeito de texto explosivo */
+.explode-card{
+  background: #E0E0E0;
+}
+.explode-box{
+  height: 220px;
+  background: #111111;
+  display: flex;
+  justify-content: center; /* Centraliza no plano horizontal */
+  align-items: center; /* Centraliza no plano vertical */
+  position: relative;
+  overflow: hidden;
+}
+.explode-box h2{
+  color: #00FFFF;
+  font-size: 32px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+.explode-box::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; /* Posiciona no canto superior esquerdo*/
+  width: 100%; height: 100%; /* Define com as mesmas dimenções que o container "pai" */
+  background: repeating-radial-gradient( /* Cria um padrão de círculos concentricos */
+    circle at center,
+    #00FFFF 1px,
+    transparent 2px, #00FFFF 30px,
+    transparent 50px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.explode-box:hover h2{
+  transform: scale(1.5) rotate(360deg); /* Aumenta o tamanho do texto e rotaciona em 360deg */
+  opacity: 0; /* Faz o texto desaparecer */
+}
+.explode-box:hover::before{
+  transform: scale(2) rotate(-45deg);
+  opacity: 0.5;
+}
+
+/* Double-sided-card */
+.card{
+  height: 250px; /* Define a altura da carta */
+  background: transparent;
+  position: relative;
+}
+.trigger-card{
+  height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+.effect-box:hover .trigger-card{
+  transform: rotateY(180deg);
+}
+.front, .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.front{
+  background: #3498D8;
+  border: 1px solid #E5E7EB;
+}
+.back{
+  background: #E74C3C;
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
