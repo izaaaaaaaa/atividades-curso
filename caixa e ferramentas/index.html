@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!--HTML5-->
+<html lang="pt-BR"> <!--início do documento HTML-->
+  <head> <!--metadados da página,. não é exibido-->
+  <meta charset="UTF-8"> <!--codificação do arquivo HTML-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> caixa e ferramentas </title> <!--título exibido na aba ou barra de título do navegador-->
+  <link rel="stylesheet" href="styles.css" /> <!--caminho do arquivo de estilos-->
+<script src="script.js"></script>
+  </head>
+ 
+    <body>
+      <header class="top-bar"> <!-- cabeçalho, parte visível-->
+        <a href="#" class="logo">
+          <img src="https://placehold.co/80x40/007BFF/FFFFFF">
+        </a>
+       
+        <div class="search-container">
+          <input type="text" placeholder="pesquisar..." class="search-bar">
+          <button class="search-button" aria-label="pesquisar">
+            <svg xmlns="https://www.w3.org/2000/svg" width="20" height="20"
+            viewBox= "0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+     
+      <button class="login-button"> entrar </button>
+      </header>
+     
+      <h1 class="title">caixa de ferramentas</h1>
+       
+      <main class="main-container">
+        <aside class="sidebar-menu">
+          <h3> lista de efeitos </h3>
+          <ul id="toc-list"></ul>
+        </aside>
+         
+        <div class="effects-column">
+          
+          <div class="effect-card double-sided-card" id="double-sided">
+            <div class="effect-box card">
+              <div class="trigger-card">
+               <div class="front">
+                 <h2> Front Side </h2>
+                 <p> Conteúdo de texto </p>
+               </div> 
+               <div class="back">
+                <h2> Back Side </h2>
+                <p> Conteúdo de texto 2 </p>
+               </div>
+              </div>
+            </div>
+            <h3> Double-sided-card </h3>
+            <p> Esta animação cria um efeito de virada de carta em 3D.
+            Quando o usuário passa o mouse sobre a carta, ela gira 180
+            graus no eixo Y, revelando o verso. </p>
+          </div>    
+          
+          
+          <div class="effect-card explode-card" id="explode">
+            <div class="effect-box explode-box">
+              <h2> EXPLODE </h2>
+            </div>
+            <h3> Efeito de texto explosivo </h3>
+            <p> Esta animação cria um efeito "explosivo" quando 
+            o mouse passa sobre o texto </p>
+          </div>
+          
+          <div class="effect-card liquid-morph-card" id="transformer">
+            <div class="effect-box liquid-morph-box">
+              <h2> TRANSFORM </h2>
+            </div>
+            <h3> Transformação </h3>
+            <p> Efeito que modifica a forma da caixa e rotaciona, 
+            pode ser aplicado a um botão. </p>
+          </div>
+            
+          <div class="effect-card holographic-card" id="holografico">
+            <div class="effect-box holographic-box">
+              <h2> HOLOGRAMA </h2>
+            </div>
+            <h3> Cartão holográfico </h3>
+            <p> Efeito de cartão simples, que aumenta a escala, 
+            ganha uma sombra colorida na borda e brilha com um gradiente 
+            holográfico ao passar do mouse. </p>
+          </div>
+                
+          <div class="effect-card"id="sombra-3d">
+            <div class="effect-box effect-shadow"></div>
+            <h3> 1 - Sombra 3D Flutuante </h3>
+            <p>Um efeito sutil que faz o elemento parecer estar levitando, 
+            adicionando profundidade com um `box-shadow` e `hover`.</p>
+          </div>
+            
+          <div class="effect-card" id="rotacao-hover">
+            <div class="effect-box effect-rotate"></div>
+            <h3> 2 - Rotação no Hover </h3>
+            <p> Uma transição suave de rotação que gira o elemento 360 graus quando 
+            o cursor passa sobre ele. </p>
+          </div>
+                
+                
+          <div class="effect-card" id="gradiente-animado">
+            <div class="effect-box effect-gradient"></div>
+            <h3> 3 - Gradiente Animado </h3>
+            <p> Uma animação contínua que move um gradiente de cores pelo fundo do 
+            elemento, criando um visual vibrante. </p>
+          </div>
+                
+          <div class="effect-card" id="mudanca-de-cor">
+            <div class="effect-box effect-transition"></div>
+            <h3> 4 - Transição Animada </h3>
+            <p> Uma animação contínua que muda de cor do fundo. </p>
+          </div>
+                
+          <div class="effect-card" id="criacao">
+            <div class="effect-box effect-color"></div>
+            <h3> Efeito cor </h3>
+            <p> Animação  </p>
+          </div>
+            
+        </div>
+      </main>
+    </body>    
+</html>     
