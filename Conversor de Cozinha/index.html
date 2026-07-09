@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozinhas</title> 
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /*centraliza horizontalmente*/
+            align-items: center; /*centraliza verticalmente*/
+            min-height: 100vh; /*faz o corpo ter a altura total da tela*/
+            background-color: #f0f2f5;
+        }
+
+        .container-app{
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /*reduz um pouco para parecer um "card" de app*/
+            text-align: center; /*centraliza os textos e os botões internamente*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container-app">
+        <h2>Conversor de Cozinha</h2>
+        <label>Quantidade (Xícaras):</label><br>
+        <input type="number" id="Quantidade" placeholder="ex: 2" style="width: 100%; margin-bottom: 10px;">
+        <label>Ingrediente:</label><br>
+        <select id="Ingrediente" style="width: 100%; margin-bottom: 10px;">
+            <option value="120">Farinha de Trigo (120g)</option>
+            <option value="200">Açucar (200g)</option>
+            <option value="225">Manteiga (225g)</option>
+            <option value="249">Leite (249g)</option>
+        </select>
+
+        <button onclick="converter()" style="width: 100%; padding: 10px; cursor: pointer; font-size: 16px; border: none;">converter para Gramas</button>
+        <h3 id="resultado" style="color: green;"></h3>
+    </div>
+
+    <script>
+        function converter(){
+            const qtd = document.getElementById('Quantidade').value;
+            const pesoReferencia = document.getElementById('Ingrediente').value;
+            const display = document.getElementById('resultado');
+
+            if(qtd === "" || qtd <= 0){
+                display.innerText = "Digite uma quantidade válida!";
+                display.style.color = "red";
+                return;
+            }
+            const total = qtd * pesoReferencia;
+            display.innerText = "Resultado: " + total + "g";
+            display.style.color = "green";
+        }
+    </script>
+</body>
+</html>
