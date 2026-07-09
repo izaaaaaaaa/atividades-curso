@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries: Layout Responsivo</title>
+    <!-- Carregamento do Tailwind CSS para estilização rápida e moderna --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definindo a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+
+        /* Classe base para a galeria */
+        .gallery-grid {
+            display: grid;
+            gap: 16px; /* Espaçamento entre as imagens */
+            padding: 20px;
+        }
+
+        /* NÍVEL 1: Telas Pequenas (Mobile First) - Até 480px */
+        /* Por padrão, a galeria terá 1 coluna. */
+        .gallery-grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        /* NÍVEL 2: Tablets - 481px até 768px */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .gallery-grid {
+                /* Layout em 2 colunas */
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* NÍVEL 3: Desktop - 769px e acima */
+        @media (min-width: 769px) {
+            .gallery-grid {
+                /* Layout em 3 colunas */
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        /* Estilização das imagens na galeria */
+        .gallery-img {
+            width: 100%;
+            height: 200px; /* Altura fixa para visualização uniforme nas miniaturas */
+            object-fit: cover; /* Corta para preencher a altura fixa da galeria */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. Container Principal (para Título e Parágrafo - Centralizado) --><div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- Título --><header class="text-center py-6 bg-white rounded-xl shadow-lg mb-8">
+            <h1 class="text-4xl font-extrabold text-indigo-700">Explorando o Conceito de Aleatoriedade e o Design Responsivo</h1>
+        </header>
+
+        <!-- Parágrafo de Texto (Definição de Aleatório) --><section class="mb-10 p-6 bg-white rounded-xl shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4 text-indigo-600">O que Significa Ser Aleatório?</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                A palavra "aleatório" descreve eventos ou resultados que não são previsíveis ou que ocorrem sem um padrão discernível. O conceito de aleatoriedade é fundamental em diversas áreas, desde a estatística e a teoria das probabilidades até a computação e a filosofia. Matematicamente, um processo é considerado aleatório se a ocorrência de um evento particular não influencia a probabilidade de ocorrência de eventos futuros. No entanto, na prática, a aleatoriedade pura é difícil de alcançar. Geradores de números "pseudo-aleatórios" são comumente usados em software, pois seguem algoritmos determinísticos que produzem sequências que se *parecem* aleatórias, mas que são, na verdade, totalmente previsíveis se a semente (seed) inicial for conhecida. Assim, a aleatoriedade pode ser vista mais como uma medida da nossa ignorância sobre as causas exatas de um fenômeno do que uma propriedade intrínseca do universo.
+            </p>
+        </section>
+
+    </div> 
+    <!-- Fim do Container Principal para o conteúdo acima --><!-- 2. Imagem de Largura Total (FORA DO CONTAINER - Ocupa 100% da tela, com ALTURA MENOR) --><figure class="mb-10 shadow-2xl bg-white">
+        <!-- Adicionamos h-64 (altura de 256px) e object-cover para preencher --><img src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" 
+             alt="Paisagem Natural de fundo em largura total."
+             class="w-full h-64 object-cover" 
+             onerror="this.onerror=null;this.src='https://placehold.co/1920x256/4f46e5/ffffff?text=Imagem+Full-Width+e+Menor'">
+        
+        <!-- A legenda está dentro de um container centralizado para alinhar com o texto --><figcaption class="p-2 text-center text-sm bg-indigo-50 text-indigo-700 font-medium">
+            Banner adaptativo com imagem de Paisagem Natural (altura menor e largura total).
+        </figcaption>
+    </figure>
+
+    <!-- 3. Container Principal (para Galeria e Rodapé - Centralizado) --><div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- Galeria de 9 Imagens com Layout Responsivo (Media Queries) --><section class="bg-white rounded-xl shadow-lg p-4">
+            <h2 class="text-2xl font-semibold mb-6 text-center text-indigo-600">Galeria de 9 Imagens Adaptáveis</h2>
+
+            <div class="gallery-grid">
+                <!-- Imagens da Galeria - Usando a mesma URL --><img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 1">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 2">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 3">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 4">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 5">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 6">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 7">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 8">
+                <img class="gallery-img" src="https://www.colegioweb.com.br/wp-content/uploads/2014/08/Paisagem-Natural.jpg" alt="Paisagem Natural 9">
+            </div>
+        </section>
+
+        <!-- Rodapé simples --><footer class="text-center mt-8 py-4 text-gray-500 text-sm">
+            <p>&copy; 2025 Atividade de Desenvolvimento Web Responsivo</p>
+        </footer>
+    </div>
+    <!-- Fim do Container Principal para a galeria e rodapé --></body>
+</html>
